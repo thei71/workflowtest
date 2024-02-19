@@ -16,3 +16,4 @@ jobs:
           cat testfile.secret
           rm -f testfile.secret
           echo $GITHUB_EVENT_PATH
+          cat $GITHUB_EVENT_PATH
