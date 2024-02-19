@@ -10,7 +10,8 @@ jobs:
   testjob:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "and the winner is $MYSECRET" > testfile.secret && cat testfile.secret && rm -f testfile.secret
-        env:
-          MYSECRET: ${{ inputs.MYSECRET }}
-
+      - run: |
+          MYSECRET=$(cat $GITHUB_EVENT_PATH | jq -r '.inputs.MYSECRET' )
+          echo "and the winner is $MYSECRET" > testfile.secret
+          cat testfile.secret
+          rm -f testfile.secret
