@@ -15,3 +15,4 @@ jobs:
           echo "and the winner is $MYSECRET" > testfile.secret
           cat testfile.secret
           rm -f testfile.secret
+          echo $GITHUB_EVENT_PATH
