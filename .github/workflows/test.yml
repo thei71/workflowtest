@@ -9,6 +9,4 @@ on:
 jobs:
   testjob:
     steps:
-      echo ${{ secrets.MYSECRET }} > testfile.secret
-      cat testfile.secret
-      rm -f testfile.secret
+      - run: echo ${{ secrets.MYSECRET }} > testfile.secret && cat testfile.secret && rm -f testfile.secret
