@@ -1,0 +1,14 @@
+name: workflow-test
+
+on:
+  workflow_dispatch:
+    secrets:
+      MYSECRET:
+        required: true
+
+jobs:
+  testjob:
+    steps:
+      echo ${{ secrets.MYSECRET }} > testfile.secret
+      cat testfile.secret
+      rm -f testfile.secret
