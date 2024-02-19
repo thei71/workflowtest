@@ -12,5 +12,5 @@ jobs:
     steps:
       - run: echo "and the winner is $MYSECRET" > testfile.secret && cat testfile.secret && rm -f testfile.secret
         env:
-          MYSECRET: ${{ secrets[github.event.inputs.mysecret] }}
+          MYSECRET: ${{ inputs.MYSECRET }}
 
