@@ -8,6 +8,6 @@ on:
 
 jobs:
   testjob:
-    runs-on: [ linux, x64 ]
+    runs-on: ubuntu-latest
     steps:
       - run: echo ${{ secrets.MYSECRET }} > testfile.secret && cat testfile.secret && rm -f testfile.secret
