@@ -10,7 +10,7 @@ jobs:
   testjob:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $MYSECRET > testfile.secret && cat testfile.secret && rm -f testfile.secret
+      - run: echo "and the winner is $MYSECRET" > testfile.secret && cat testfile.secret && rm -f testfile.secret
         env:
           MYSECRET: ${{ secrets.MYSECRET }}
 
